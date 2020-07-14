@@ -6,33 +6,246 @@
 
 <style>
 
-body {
-    grid-template-colums: repeat(6, 1fr);
-    grid-template-rows: auto;
+a {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.container {
+    font-family: sans-serif;
+    font-size: 12px;
     display: grid;
-    grid-gap: 2px;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: auto;
+    grid-gap: 0px;
+    grid-template-areas: 
+    "head head head head head head"
+    "logo logo logo logo logo logo"
+    "zoek zoek zoek zoek zoek zoek"
+    "knp1 knp1 knp1 knp2 knp2 knp2"
+    "aanb aanb aanb aanb aanb aanb";
+}
+
+.container2 {
+    font-family: sans-serif;
+    font-size: 12px;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: auto;
+    grid-gap: 0px;
+    grid-template-areas: 
+    "foo1 foo1 foo1 foo1 foo1 foo1"
+    "foo2 foo2 foo2 foo3 foo3 foo3";
+    color: #777777;    
 }
 
 .bggrid {
-    background-color: grey;
+    background-color: white;
+}
+
+#head {
+    grid-area: head;
+    height: 3em;
+    margin-bottom: 1em;
+    justify-self: right;
+}
+
+#logo {
+    grid-area: logo;
+    height: 10em;
+    justify-self: center;
+    background-color: white;
+    margin-top: 10%;
+}
+
+#Site-search {
+        border-color: rgb(209, 209, 209);
+        border-radius: 20px;
+        border-style: solid;
+        border-width: 1px;
+        width: 500px;
+        height: 40px;
+        font-size: 16px;
+    }
+
+#zoek {
+    grid-area: zoek;
+    justify-self: center;
+    line-height: 60px;
+}
+
+.knop {
+    background-color: #f2f2f2;
+    border: 1px solid #f2f2f2;
+    border-radius: 4px;
+    color: #5F6368;
+    font-family: arial,sans-serif;
+    font-size: 14px;
+    line-height: 27px;
+    height: 36px;
+    min-width: 54px;
+    text-align: center;
+    cursor: pointer;
+    user-select: none;
+    margin-top: 10%;
+}
+
+#knp1 {
+    grid-area: knp1;
+    height: 6em;
+    justify-self: right;
+    margin-right: 5px;
+}
+
+#knp2 {
+    grid-area: knp2;
+    height: 6em;
+    justify-self: left;
+    margin-left: 5px;
+}
+
+#aanb {
+    grid-area: aanb;
+    height: 5em;
+    justify-self: center;
+}
+
+#foo1 {
+    grid-area: foo1;
+    background-color: #f2f2f2;
+    height: 3em;
+    margin-top: 1em;
+    text-align: left;
+}
+
+#foo2 {
+    grid-area: foo2;
+    background-color: #f2f2f2;
+    height: 3em;
+    text-align: left;
+}
+
+#foo3 {
+    grid-area: foo3;
+    background-color: #f2f2f2;
+    height: 3em;
+    margin-bottom: 5%;
+    text-align: right;
+}
+
+.but3 {
+border: 1px solid #4285f4;
+font-weight: bold;
+outline: none;
+background: -moz-linear-gradient(top,#4387fd,#4683ea);
+color: white;
+font-family: arial,sans-serif;
+font-size: 13px;
+line-height: 27px;
+height: 30px;
+width: 94px;
+text-align: center;
+cursor: pointer;
+user-select: none;
+justify-self: right;
+border-radius: 2px;
+}
+
+li {
+    display: inline;
+    padding-inline: 10px;
+    
+}
+
+#eng {
+    color: blue;
+}
+
+#onder {
+    color: #777777;
 }
 
 </style>
 
 </head>
 
+<header>
+    <div class="container">
+         <div class="bggrid" id="head">
+            <ul>
+            <li>
+            <a :hover href="Gmail">Gmail</a>
+            </li>
+            <li><a :hover href="Afbeeldingen">Afbeeldingen</a></li>
+            <li>    
+            <button class="but3" type="button"> Inloggen</button>    
+            </li>
+            </ul>
+        </div>
+    </div>    
+</header>
+
 <body>
+
+<div class="container">
+
+<div class="bggrid" id="logo">
+    <div class="logo"><img src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" alt="Google Logo">
+    </div>
+</div>
+
+<div class="bggrid" id="zoek">
     
-<div class="bggrid">
-    Header
+        <label for="Site-search"></Search>
+        <input type="Search" id="Site-search" name="q">
+    
 </div>
 
-<div class="bggrid">
-    Logo
+<div class="bggrid" id="knp1">
+    <Button class="knop" type="button">Google zoeken</Button>
 </div>
 
-<div class="bggrid">
-    Zoekbalk
+<div class="bggrid" id="knp2">
+    <Button class="knop" type="button">Ik doe een gok</Button>
 </div>
 
+<div class="bggrid" id="aanb">
+    Google aangeboden in:
+    <a :hover id="eng" href="English">English</a>
+</div>    
+
+</div>
 </body>
+
+<footer> 
+
+<div class="container2">
+<div class="bggrid" id="foo1">
+   <ul>
+       <li>Nederlands</li>
+    </ul>
+    <hr>
+</div>
+<div class="bggrid" id="foo2">
+    <ul>
+        <li><a id="onder" href="#">Adverteren</a></li>
+        <li><a id="onder" href="#">Bedrijf</a></li>
+        <li><a id="onder" href="#">Over</a></li>
+        <li><a id="onder" href="#">Hoe Google Zoeken werkt</a></li>
+    </ul>
+</div>
+<div class="bggrid" id="foo3">
+    <ul>
+        <li><a id="onder" href="#">Privacy</a></li>
+        <li><a id="onder" href="#">Voorwaarden</a></li>
+        <li><a id="onder" href="#">Instellingen</a></li>
+     </ul>
+</div>
+
+</div>
+
+</footer>
